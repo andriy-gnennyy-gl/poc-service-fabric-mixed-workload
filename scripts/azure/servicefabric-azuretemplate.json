@@ -1,0 +1,810 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusters_wlixmix_name": {
+            "defaultValue": "wlixmix",
+            "type": "String"
+        },
+        "virtualNetworks_VNet_wlixmix_name": {
+            "defaultValue": "VNet-wlixmix",
+            "type": "String"
+        },
+        "virtualMachineScaleSets_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "storageAccounts_sfdgwlixmix2569_name": {
+            "defaultValue": "sfdgwlixmix2569",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_name": {
+            "defaultValue": "LB-wlixmix-Default",
+            "type": "String"
+        },
+        "publicIPAddresses_LBIP_wlixmix_0_name": {
+            "defaultValue": "LBIP-wlixmix-0",
+            "type": "String"
+        },
+        "storageAccounts_sflogswlixmix9048_name": {
+            "defaultValue": "sflogswlixmix9048",
+            "type": "String"
+        },
+        "subnets_Subnet_0_name": {
+            "defaultValue": "Subnet-0",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_1": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_2": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/FabricGatewayProbe",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_3": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_4": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_5": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/FabricHttpGatewayProbe",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_6": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_7": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_8": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/AppPortProbe1",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_9": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_10": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_11": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/AppPortProbe2",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_12": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_13": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_14": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/AppPortProbe3",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_15": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_16": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_17": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/probes/AppPortProbe4",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_18": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_19": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_20": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_21": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_22": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        },
+        "loadBalancers_LB_wlixmix_Default_id_23": {
+            "defaultValue": "/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Compute/virtualMachineScaleSets/Default'.",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "sku": {
+                "name": "Standard_D1_v2",
+                "tier": "Standard",
+                "capacity": 5
+            },
+            "name": "[parameters('virtualMachineScaleSets_Default_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "northeurope",
+            "tags": {
+                "resourceType": "Service Fabric",
+                "clusterName": "wlixmix"
+            },
+            "scale": null,
+            "properties": {
+                "singlePlacementGroup": true,
+                "upgradePolicy": {
+                    "mode": "Automatic"
+                },
+                "virtualMachineProfile": {
+                    "osProfile": {
+                        "computerNamePrefix": "[parameters('virtualMachineScaleSets_Default_name')]",
+                        "adminUsername": "wlixmix",
+                        "linuxConfiguration": {
+                            "disablePasswordAuthentication": false
+                        },
+                        "secrets": []
+                    },
+                    "storageProfile": {
+                        "osDisk": {
+                            "createOption": "FromImage",
+                            "caching": "ReadOnly",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS"
+                            }
+                        },
+                        "imageReference": {
+                            "publisher": "Canonical",
+                            "offer": "UbuntuServer",
+                            "sku": "16.04-LTS",
+                            "version": "latest"
+                        }
+                    },
+                    "networkProfile": {
+                        "networkInterfaceConfigurations": [
+                            {
+                                "name": "NIC-wlixmix-0",
+                                "properties": {
+                                    "primary": true,
+                                    "enableAcceleratedNetworking": false,
+                                    "dnsSettings": {
+                                        "dnsServers": []
+                                    },
+                                    "ipConfigurations": [
+                                        {
+                                            "name": "NIC-wlixmix-0",
+                                            "properties": {
+                                                "subnet": {
+                                                    "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_VNet_wlixmix_name'), parameters('subnets_Subnet_0_name'))]"
+                                                },
+                                                "privateIPAddressVersion": "IPv4",
+                                                "loadBalancerBackendAddressPools": [
+                                                    {
+                                                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_wlixmix_Default_name')), '/backendAddressPools/LoadBalancerBEAddressPool')]"
+                                                    }
+                                                ],
+                                                "loadBalancerInboundNatPools": [
+                                                    {
+                                                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_wlixmix_Default_name')), '/inboundNatPools/LoadBalancerBEAddressNatPool')]"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "extensionProfile": {
+                        "extensions": [
+                            {
+                                "properties": {
+                                    "publisher": "Microsoft.Azure.ServiceFabric",
+                                    "type": "ServiceFabricLinuxNode",
+                                    "typeHandlerVersion": "1.0",
+                                    "autoUpgradeMinorVersion": true,
+                                    "settings": {
+                                        "clusterEndpoint": "https://northeurope.servicefabric.azure.com/runtime/clusters/fa291e41-07ec-4aa4-bbdb-cca35db51fd3",
+                                        "nodeTypeRef": "[parameters('virtualMachineScaleSets_Default_name')]",
+                                        "durabilityLevel": "Bronze",
+                                        "enableParallelJobs": true,
+                                        "nicPrefixOverride": "10.0.0.0/24"
+                                    }
+                                },
+                                "name": "[concat(parameters('virtualMachineScaleSets_Default_name'),'_ServiceFabricLinuxNode')]"
+                            },
+                            {
+                                "properties": {
+                                    "publisher": "Microsoft.OSTCExtensions",
+                                    "type": "LinuxDiagnostic",
+                                    "typeHandlerVersion": "2.3",
+                                    "autoUpgradeMinorVersion": true,
+                                    "settings": {
+                                        "xmlCfg": "PFdhZENmZz48RGlhZ25vc3RpY01vbml0b3JDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJzIHNjaGVkdWxlZFRyYW5zZmVyUGVyaW9kPSJQVDFNIj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XEF2YWlsYWJsZU1lbW9yeSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IkJ5dGVzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFBlcmNlbnRBdmFpbGFibGVNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiBwZXJjZW50IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJCeXRlcyI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9Ik1lbW9yeSB1c2VkIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxNZW1vcnlcUGVyY2VudFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IHBlcmNlbnRhZ2UiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXE1lbW9yeVxQZXJjZW50VXNlZEJ5Q2FjaGUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiB1c2VkIGJ5IGNhY2hlIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElkbGVUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBpZGxlIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFByb2Nlc3NvclxQZXJjZW50VXNlclRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIHVzZXIgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUHJvY2Vzc29yXFBlcmNlbnRQcm9jZXNzb3JUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBwZXJjZW50YWdlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElPV2FpdFRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIElPIHdhaXQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRvdGFsIGJ5dGVzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcUmVhZEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgZ3Vlc3QgT1MiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xXcml0ZUJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcVHJhbnNmZXJzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVycyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXFJlYWRzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWRzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcV3JpdGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlcyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VSZWFkVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VXcml0ZVRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJTZWNvbmRzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iRGlzayB3cml0ZSB0aW1lIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcQXZlcmFnZVRyYW5zZmVyVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVyIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xBdmVyYWdlRGlza1F1ZXVlTGVuZ3RoIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHF1ZXVlIGxlbmd0aCIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48L1BlcmZvcm1hbmNlQ291bnRlcnM+PE1ldHJpY3MgcmVzb3VyY2VJZD0iL3N1YnNjcmlwdGlvbnMvNmYyN2Y2MjYtYmU1Zi00NjFkLWE4MGYtZmEyZTAyOGI4ODBhL3Jlc291cmNlR3JvdXBzL3dsaXhtaXgvcHJvdmlkZXJzL01pY3Jvc29mdC5Db21wdXRlL3ZpcnR1YWxNYWNoaW5lU2NhbGVTZXRzL0RlZmF1bHQiPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxSCIvPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxTSIvPjwvTWV0cmljcz48L0RpYWdub3N0aWNNb25pdG9yQ29uZmlndXJhdGlvbj48L1dhZENmZz4=",
+                                        "StorageAccount": "sfdgwlixmix2569"
+                                    }
+                                },
+                                "name": "VMDiagnosticsVmExt_vmNodeType0Name"
+                            }
+                        ]
+                    }
+                },
+                "overprovision": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_VNet_wlixmix_name'), parameters('subnets_Subnet_0_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_wlixmix_Default_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/loadBalancers/LB-wlixmix-Default'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "name": "[parameters('loadBalancers_LB_wlixmix_Default_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "northeurope",
+            "tags": {
+                "resourceType": "Service Fabric",
+                "clusterName": "wlixmix"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "e8d354a4-fe67-45e3-b572-c4a585453df1",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "LoadBalancerIPConfig",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_LBIP_wlixmix_0_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "LoadBalancerBEAddressPool",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "LBRule",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id')]"
+                            },
+                            "frontendPort": 19000,
+                            "backendPort": 19000,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_2')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "LBHttpRule",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_3')]"
+                            },
+                            "frontendPort": 19080,
+                            "backendPort": 19080,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_4')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_5')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AppPortLBRule1",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_6')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_7')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_8')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AppPortLBRule2",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_9')]"
+                            },
+                            "frontendPort": 8000,
+                            "backendPort": 8000,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_10')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_11')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AppPortLBRule3",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_12')]"
+                            },
+                            "frontendPort": 8001,
+                            "backendPort": 8001,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_13')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_14')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AppPortLBRule4",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_15')]"
+                            },
+                            "frontendPort": 8002,
+                            "backendPort": 8002,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_16')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_17')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "FabricGatewayProbe",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 19000,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "FabricHttpGatewayProbe",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 19080,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "AppPortProbe1",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 80,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "AppPortProbe2",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 8000,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "AppPortProbe3",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 8001,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "AppPortProbe4",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 8002,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    }
+                ],
+                "inboundNatRules": [
+                    {
+                        "name": "LoadBalancerBEAddressNatPool.0",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_18')]"
+                            },
+                            "frontendPort": 3389,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "LoadBalancerBEAddressNatPool.1",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_19')]"
+                            },
+                            "frontendPort": 3390,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "LoadBalancerBEAddressNatPool.2",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_20')]"
+                            },
+                            "frontendPort": 3391,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "LoadBalancerBEAddressNatPool.3",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_21')]"
+                            },
+                            "frontendPort": 3392,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "LoadBalancerBEAddressNatPool.4",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_22')]"
+                            },
+                            "frontendPort": 3393,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    }
+                ],
+                "outboundNatRules": [],
+                "inboundNatPools": [
+                    {
+                        "name": "LoadBalancerBEAddressNatPool",
+                        "etag": "W/\"5d8197a2-b3c6-4393-b28b-40a4ecda2687\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendPortRangeStart": 3389,
+                            "frontendPortRangeEnd": 4500,
+                            "backendPort": 22,
+                            "protocol": "Tcp",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_LB_wlixmix_Default_id_23')]"
+                            }
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_LBIP_wlixmix_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/publicIPAddresses/LBIP-wlixmix-0'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_LBIP_wlixmix_0_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "northeurope",
+            "tags": {
+                "resourceType": "Service Fabric",
+                "clusterName": "wlixmix"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "5f9659ef-d973-4bbd-ba15-d3955358b85c",
+                "ipAddress": "40.69.60.8",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "wlixmix",
+                    "fqdn": "wlixmix.northeurope.cloudapp.azure.com"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/virtualNetworks/VNet-wlixmix'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_VNet_wlixmix_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "northeurope",
+            "tags": {
+                "resourceType": "Service Fabric",
+                "clusterName": "wlixmix"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "4c3c8728-2ca4-4014-8cf9-233806cbfca7",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "Subnet-0",
+                        "etag": "W/\"bd65c468-45b1-4e15-ae2a-89a865d86554\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.0.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourcegroups/wlixmix/providers/Microsoft.ServiceFabric/clusters/wlixmix'.",
+            "type": "Microsoft.ServiceFabric/clusters",
+            "name": "[parameters('clusters_wlixmix_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "northeurope",
+            "tags": {
+                "resourceType": "Service Fabric",
+                "clusterName": "wlixmix"
+            },
+            "scale": null,
+            "properties": {
+                "clusterCodeVersion": "6.0.127.1",
+                "managementEndpoint": "[concat('http://', parameters('clusters_wlixmix_name'),'.northeurope.cloudapp.azure.com:19080')]",
+                "clientCertificateThumbprints": [],
+                "clientCertificateCommonNames": [],
+                "fabricSettings": [],
+                "upgradeDescription": {
+                    "upgradeReplicaSetCheckTimeout": "10675199.02:48:05.4775807",
+                    "healthCheckWaitDuration": "00:05:00",
+                    "healthCheckStableDuration": "00:05:00",
+                    "healthCheckRetryTimeout": "00:45:00",
+                    "upgradeTimeout": "12:00:00",
+                    "upgradeDomainTimeout": "02:00:00",
+                    "healthPolicy": {
+                        "maxPercentUnhealthyNodes": 100,
+                        "maxPercentUnhealthyApplications": 100
+                    },
+                    "deltaHealthPolicy": {
+                        "maxPercentDeltaUnhealthyNodes": 0,
+                        "maxPercentUpgradeDomainDeltaUnhealthyNodes": 0,
+                        "maxPercentDeltaUnhealthyApplications": 0
+                    }
+                },
+                "diagnosticsStorageAccountConfig": {
+                    "storageAccountName": "[concat('sflogs', parameters('clusters_wlixmix_name'),'9048')]",
+                    "protectedAccountKeyName": "StorageAccountKey1",
+                    "blobEndpoint": "[concat('https', '://', parameters('storageAccounts_sflogswlixmix9048_name'), '.blob.core.windows.net', '/')]",
+                    "queueEndpoint": "[concat('https', '://', parameters('storageAccounts_sflogswlixmix9048_name'), '.queue.core.windows.net', '/')]",
+                    "tableEndpoint": "[concat('https', '://', parameters('storageAccounts_sflogswlixmix9048_name'), '.table.core.windows.net', '/')]"
+                },
+                "nodeTypes": [
+                    {
+                        "name": "Default",
+                        "clientConnectionEndpointPort": 19000,
+                        "httpGatewayEndpointPort": 19080,
+                        "applicationPorts": {
+                            "startPort": 20000,
+                            "endPort": 30000
+                        },
+                        "ephemeralPorts": {
+                            "startPort": 49152,
+                            "endPort": 65534
+                        },
+                        "isPrimary": true,
+                        "vmInstanceCount": 5,
+                        "durabilityLevel": "Bronze"
+                    }
+                ],
+                "vmImage": "Linux",
+                "reliabilityLevel": "Silver",
+                "upgradeMode": "Automatic"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_sflogswlixmix9048_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Storage/storageAccounts/sfdgwlixmix2569'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_sfdgwlixmix2569_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "northeurope",
+            "tags": {
+                "clusterName": "wlixmix",
+                "resourceType": "Service Fabric"
+            },
+            "scale": null,
+            "properties": {
+                "encryption": {
+                    "keySource": "Microsoft.Storage",
+                    "services": {
+                        "blob": {
+                            "enabled": true
+                        },
+                        "file": {
+                            "enabled": true
+                        }
+                    }
+                },
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "defaultAction": "Allow",
+                    "ipRules": [],
+                    "virtualNetworkRules": []
+                },
+                "supportsHttpsTrafficOnly": false
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Storage/storageAccounts/sflogswlixmix9048'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_sflogswlixmix9048_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "northeurope",
+            "tags": {
+                "clusterName": "wlixmix",
+                "resourceType": "Service Fabric"
+            },
+            "scale": null,
+            "properties": {
+                "encryption": {
+                    "keySource": "Microsoft.Storage",
+                    "services": {
+                        "blob": {
+                            "enabled": true
+                        },
+                        "file": {
+                            "enabled": true
+                        }
+                    }
+                },
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "defaultAction": "Allow",
+                    "ipRules": [],
+                    "virtualNetworkRules": []
+                },
+                "supportsHttpsTrafficOnly": false
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/6f27f626-be5f-461d-a80f-fa2e028b880a/resourceGroups/wlixmix/providers/Microsoft.Network/virtualNetworks/VNet-wlixmix/subnets/Subnet-0'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_VNet_wlixmix_name'), '/', parameters('subnets_Subnet_0_name'))]",
+            "apiVersion": "2017-06-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.0.0/24"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_VNet_wlixmix_name'))]"
+            ]
+        }
+    ]
+}

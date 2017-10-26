@@ -1,0 +1,102 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusters_wlixmix_name": {
+            "value": null
+        },
+        "virtualNetworks_VNet_wlixmix_name": {
+            "value": null
+        },
+        "virtualMachineScaleSets_Default_name": {
+            "value": null
+        },
+        "storageAccounts_sfdgwlixmix2569_name": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_name": {
+            "value": null
+        },
+        "publicIPAddresses_LBIP_wlixmix_0_name": {
+            "value": null
+        },
+        "storageAccounts_sflogswlixmix9048_name": {
+            "value": null
+        },
+        "subnets_Subnet_0_name": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_1": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_2": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_3": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_4": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_5": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_6": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_7": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_8": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_9": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_10": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_11": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_12": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_13": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_14": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_15": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_16": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_17": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_18": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_19": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_20": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_21": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_22": {
+            "value": null
+        },
+        "loadBalancers_LB_wlixmix_Default_id_23": {
+            "value": null
+        }
+    }
+}
