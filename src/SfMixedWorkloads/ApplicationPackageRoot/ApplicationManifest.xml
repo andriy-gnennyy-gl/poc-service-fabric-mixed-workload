@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest ApplicationTypeName="SfMixedWorkloadsType"
-                     ApplicationTypeVersion="1.0.0"
+                     ApplicationTypeVersion="1.0.7"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
                      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -11,8 +11,13 @@
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="MongoDBPkg" ServiceManifestVersion="1.0.0" />
+    <ServiceManifestRef ServiceManifestName="MongoDBPkg" ServiceManifestVersion="1.0.7" />
     <ConfigOverrides />
+    <Policies>
+      <ContainerHostPolicies CodePackageRef="Code">
+        <PortBinding ContainerPort="27017" EndpointRef="MongoDBTypeEndpoint"/>
+      </ContainerHostPolicies>
+    </Policies>        
   </ServiceManifestImport>
   <DefaultServices>
     <!-- The section below creates instances of service types, when an instance of this 
